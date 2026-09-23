@@ -6,7 +6,7 @@ ES0345672010,2019-12-31,217021.0,217021.0,0.0,8.0,TIED,https://internet.cnmv.es/
 ES0377955010,2019-12-31,319060.0,,,,NOT_COMPARABLE (checkpoint scope: all non-subordinated series (sum of A classes)),https://www.cnmv.es/AUDITA/2020/19038.pdf
 ES0377955010,2020-12-31,276544.0,,,,NOT_COMPARABLE (checkpoint scope: all non-subordinated series (sum of A classes)),https://www.cnmv.es/AUDITA/2020/19038.pdf
 ES0377955010,2021-12-31,239704.0,,,,NOT_COMPARABLE (checkpoint scope: all non-subordinated series (sum of A classes)),https://internet.cnmv.es/AUDITA/2021/19447.pdf
-ES0377992005,2020-12-31,302596.0,302596.0,0.0,1.0,TIED,https://internet.cnmv.es/AUDITA/2022/19794.pdf
+ES0377992005,2020-12-31,302596.0,290087.0,-12509.0,1.0,BREAK,https://internet.cnmv.es/AUDITA/2022/19794.pdf
 ES0377992005,2021-12-31,255424.0,255425.0,1.0,2.0,TIED,https://internet.cnmv.es/AUDITA/2022/19794.pdf
 ES0377992005,2022-12-31,210062.0,210064.0,2.0,4.0,TIED,https://internet.cnmv.es/AUDITA/2022/19794.pdf
 ES0377993029,2020-12-31,193914.0,,,,NOT_COMPARABLE (checkpoint scope: all non-subordinated series (sum of A classes)),https://internet.cnmv.es/AUDITA/2021/19444.pdf

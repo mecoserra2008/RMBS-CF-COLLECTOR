@@ -75,7 +75,8 @@ on a machine that can reach those hosts and the pipeline fills them without code
 ## Automatic checks (regenerated every run)
 
 - Failed row/chain checks: 0
-- Year-end breaks: 0
+- Year-end breaks: 1
+  - ES0377992005 2020-12-31: chain 290087.0 vs audited 302596.0 kEUR (https://internet.cnmv.es/AUDITA/2022/19794.pdf)
 - IPD calendar deviations (observed vs prospectus rule): 7
   - ES0345672010 2016-01-21 vs rule 2016-01-15: DEVIATION +6d
   - ES0345672010 2016-04-22 vs rule 2016-04-15: DEVIATION +7d

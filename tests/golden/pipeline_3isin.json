@@ -4,7 +4,7 @@
   "ES0377992005": "NO_RELIABLE_MODEL (THIN_HISTORY)",
   "XS0222684655": "NO_RELIABLE_MODEL"
  },
- "gaps": 109,
+ "gaps": 108,
  "gate": {
   "ES0345672010": "INCOMPLETE",
   "ES0377992005": "INCOMPLETE",
@@ -16,7 +16,7 @@
   "XS0222684655": 23
  },
  "yearend": [
-  "TIED",
+  "BREAK",
   "TIED",
   "TIED",
   "TIED",
