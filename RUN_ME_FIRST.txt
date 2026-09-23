@@ -1,0 +1,4 @@
+1) Unzip, open Claude Code (local: terminal / VS Code / desktop app) in this folder.
+2) Paste the prompt from PROMPT_FOR_CLAUDE_CODE.md.
+3) Approve the hosts listed in HANDOFF.md section 9 when asked (or pre-allow them).
+Lusitano 4/5/6: put the Citi investor reports in reports/<ISIN>_LUSI_x/ whenever you have them.

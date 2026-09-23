@@ -1,0 +1,25 @@
+Miles de Euros
+Serie A1 Serie A2 Serie A3 Serie B
+Pasivo no 
+Corriente
+Saldos al 1 de 
+enero de 2018 - - 250.796 17.529 77.938 5.447 52.800 -
+Amortización 
+15.01.2018 - - - -18.687 - -5.807 - -
+Amortización 
+16.04.2018 - - - -10.083 - -3.133 - -
+Amortización 
+16.07.2018 - - - -4.039 - -12.117 - -
+Amortización 
+15.10.2018 - - - -5.009 - -15.028 - -
+Traspasos - - -30.907 30.907 -41.257 41.257 - -
+Saldos al 31 de 
+diciembre de 2018 - - 219.889 10.618 36.682 10.619 52.800 -
+Amortización 
+15.01.2019 - - - -2.910 - -8.730 - -
+Amortización 
+15.04.2019 - - - -2.414 - -7.242 - -
+Amortización 
+15.07.2019 - - - -6.208 - -18.624 - -
+Amortización 
+15.10.2019 - - - -1.954 - -5.862 - -

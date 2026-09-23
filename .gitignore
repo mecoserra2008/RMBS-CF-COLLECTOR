@@ -1,0 +1,4 @@
+reports/
+*.zip
+selftest_out/
+__pycache__/

@@ -1,0 +1,46 @@
+Magellan Mortgages No. 4 Report January 2026
+1. Security Level Information
+Security Class Name Class A Class B Class C Class D Class E
+ISIN XS0260784318 XS0260784821 XS0260787840 XS0260788657 XS0260789382
+Total Original Balance 1,413,750,000.00 33,750,000.00 18,750,000.00 33,750,000.00 21,750,000.00
+Total Beginning Balance Prior to Distribution 149,957,876.25 4,619,328.75 2,566,293.75 4,619,328.75 0.00
+Total Ending Balance Subsequent to Distribution 144,042,746.25 4,437,146.25 2,465,081.25 4,437,146.25 0.00
+Total Principal Distribution 5,915,130.00 182,182.50 101,212.50 182,182.50 0.00
+Pool Factor 10.1887% 13.1471% 13.1471% 13.1471% 0.0000%
+Principal Deficiency Ledger 0.00 0.00 0.00 0.00 n/a
+Total Interest Distributions 875,287.46 28,143.00 16,684.39 36,642.57 0.00
+Payment Date 20/01/2026 20/01/2026 20/01/2026 20/01/2026 20/01/2026
+Accrual Beginning Date 20/10/2025 20/10/2025 20/10/2025 20/10/2025 20/10/2025
+Accrual Ending Date 20/01/2026 20/01/2026 20/01/2026 20/01/2026 20/01/2026
+Accrual Period 92 92 92 92 92
+Accrual Rate 2.284 % 2.384 % 2.544 % 3.104 % 3.254 %
+Euro Reference Rate 2.004 % 2.004 % 2.004 % 2.004 % 2.004 %
+Spread (bps) 28 38 54 110 125
+Denomination 1,060.71 1,368.69 1,368.69 1,368.69 0.00
+Day Basis Act/360 Act/360 Act/360 Act/360 Act/360
+New Denomination for the next period 1,018.87 1,314.71 1,314.71 1,314.71 0.00
+2. Collateral Level Information
+Beginning Principal Outstanding Balance 167,685,548.37 5,208
+Beginning Principal Outstanding Balance ( net of deemed Losses) 161,761,755.60 4,892
+Principal Redemption 6,440,010.88 131
+ Scheduled Principal Redemption 2,525,885.29
+ Prepayments 3,731,073.65
+ Retired Mortgages Assets for non-permitted variations 183,051.94
+CPR 9.06%
+Deemed Principal Losses 34,539.67 0
+Principal Recoveries 94,508.64 0
+Ending Principal Outstanding Balance 161,245,537.49 5,077
+Ending Principal Outstanding Balance ( net of deemed losses) 155,381,713.69 4,761
+30/09/2025 31/12/2025
+WA Interest Rate 2.843% 2.869%
+3. Triggers and Tests Determinations
+Mortgage Loans in arrears (90 - 365 days) 163,238.33
+Net Cumulative Default Ratio
+Aggregate Principal Outstanding Balance of the Mortgage Assets as at the CDD 1,500,000,016.28
+Ratio 0.37%
+Pro-Rata Test PASS
+(b) Cash Reserve Account 9,000,000.00
+6. Principal Distribution IPD
+Number of outstanding Class A Notes 141,375.00
+Class A Notes Principal Payment - per Note 41.84
+Class A Notes Principal Payment 5,915,130.00
