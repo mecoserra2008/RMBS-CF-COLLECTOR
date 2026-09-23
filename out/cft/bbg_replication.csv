@@ -1,0 +1,15 @@
+isin,run_id,variant,n_dates,max_abs_diff_eur,mean_abs_diff_bp_orig,start_balance_bbg,start_balance_filed,status
+XS0222684655,,,,,,,,MANUAL_REQUIRED: missing cashflows.csv
+XS0260784318,,,,,,,,MANUAL_REQUIRED: missing cashflows.csv
+ES0377992005,,,,,,,,MANUAL_REQUIRED: missing cashflows.csv
+ES0377993029,,,,,,,,MANUAL_REQUIRED: missing cashflows.csv
+ES0377994019,,,,,,,,MANUAL_REQUIRED: missing cashflows.csv
+ES0377994027,,,,,,,,MANUAL_REQUIRED: missing cashflows.csv
+ES0377966009,,,,,,,,MANUAL_REQUIRED: missing cashflows.csv
+ES0377955010,,,,,,,,MANUAL_REQUIRED: missing cashflows.csv
+ES0359091016,,,,,,,,MANUAL_REQUIRED: missing cashflows.csv
+ES0380957003,,,,,,,,MANUAL_REQUIRED: missing cashflows.csv
+ES0338186010,,,,,,,,MANUAL_REQUIRED: missing cashflows.csv
+ES0345672010,,,,,,,,MANUAL_REQUIRED: missing cashflows.csv
+ES0345721015,,,,,,,,MANUAL_REQUIRED: missing cashflows.csv
+ES0345721023,,,,,,,,MANUAL_REQUIRED: missing cashflows.csv

@@ -25,7 +25,7 @@ from . import validate as V
 from .schema import SchemaError, write_table
 from .sources import MANUAL, REGISTRY
 
-STAGES = ["harvest", "parse", "validate", "gate", "select", "price", "bbg", "report", "workbook", "selfcheck"]
+STAGES = ["harvest", "parse", "validate", "gate", "select", "cft", "price", "bbg", "report", "workbook", "selfcheck"]
 
 
 class Run:
@@ -248,6 +248,11 @@ class Run:
         write_table(self.out / "champion_models.csv", "champion_models", champs)
         n_ch = sum(1 for c in champs if str(c.get("status", "")).startswith("CHAMPION"))
         return f"{n_ch} champions, {len(champs) - n_ch} NO_RELIABLE_MODEL/MANUAL"
+
+    # ------------------------------------------------------------------ cft grid + smoothness ranking
+    def cft(self):
+        from .cft.run import run_all
+        return run_all(self.root, [i for i in self.isins() if i not in MANUAL], self.cfg)
 
     # ------------------------------------------------------------------ price
     def price(self):

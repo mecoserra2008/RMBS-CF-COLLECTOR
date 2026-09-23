@@ -68,6 +68,15 @@ def check(root: Path, cfg: dict) -> list[str]:
     for sub, name in (("model_scores", "model_scores"), ("uncertainty", "uncertainty")):
         for p in sorted((out / sub).glob("*.csv")) if (out / sub).exists() else []:
             errs += check_table(p, name)
+    cft = out / "cft"
+    if cft.exists():
+        from .cft.run import _tables
+        _tables()
+        for p in sorted(cft.glob("*.csv")):
+            name = {"summary.csv": "cft_summary", "criterion_check.csv": "cft_criterion",
+                    "bbg_replication.csv": "cft_bbg_replication"}.get(p.name) or \
+                ("cft_ranking" if p.name.endswith("_ranking.csv") else "cft_marginals")
+            errs += check_table(p, name)
     errs += reprice_cases(Path(root))
     return errs
 

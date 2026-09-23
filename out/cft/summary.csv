@@ -1,0 +1,15 @@
+isin,state_mode,n_configs,best_S,best_config,equivalence_class_size,equiv_rate_min,equiv_rate_max,equiv_wal_min,equiv_wal_max,hist_last_rate_annual,filed_facts_used,criterion_origins,criterion_mean_spearman,criterion_smoothest_beats_naive,status
+XS0222684655,pool,23892,2.48021348,prepay=CPR 0.04; default=SDA 50; severity=0.2; lag_m=24; advancing=1; call=maturity; trigger=as_filed; wac=0.03174; wam_m=132.6; index_shift=0.0,86,0.11137448,0.11138511,5.12366217,5.13240373,0.12471671,"cdr,cpr,prorata",16,0.86103513,16/16,RANKED
+XS0260784318,pool,23892,0.74997115,prepay=CPR 0.06; default=none; severity=0.0; lag_m=0; advancing=0; call=maturity; trigger=as_filed; wac=0.02996; wam_m=149.9; index_shift=0.0,196,0.12126863,0.12128015,5.2667098,5.27589544,0.11234601,"cdr,cpr,prorata",6,0.73245746,5/6,RANKED
+ES0377992005,proxy,47784,0.02654306,prepay=CPR 0.14; default=SDA 200; severity=0.2; lag_m=6; advancing=1; call=maturity; trigger=as_filed; wac=0.03; wam_m=180.0; index_shift=0.0,30,0.18469594,0.18825817,4.1381989,4.58946458,0.17211197,none (smoothness only: prepay/default split not identified),2,0.39380221,2/2,RANKED (proxy: repline inputs assumed)
+ES0377993029,,,,,,,,,,,,,,,NO_STATE (no validated history or IPD rule)
+ES0377994019,,,,,,,,,,,,,,,NO_STATE (no validated history or IPD rule)
+ES0377994027,,,,,,,,,,,,,,,NO_STATE (no validated history or IPD rule)
+ES0377966009,,,,,,,,,,,,,,,NO_STATE (no validated history or IPD rule)
+ES0377955010,,,,,,,,,,,,,,,NO_STATE (no validated history or IPD rule)
+ES0359091016,,,,,,,,,,,,,,,NO_STATE (no validated history or IPD rule)
+ES0380957003,pool_sub_implied,35838,0.35964409,prepay=CPR 0.08; default=CDR 0.05; severity=0.2; lag_m=24; advancing=0; call=clean_up; trigger=as_filed; wac=0.0326; wam_m=240.0; index_shift=0.0,72,0.23406372,0.23515627,1.27149626,1.43257123,0.27431246,"cpr,prorata",0,,,RANKED (pool_sub_implied: repline inputs assumed)
+ES0338186010,,,,,,,,,,,,,,,NO_STATE (no validated history or IPD rule)
+ES0345672010,proxy,95568,3.07484739,prepay=CPR 0; default=CDR 0.05; severity=0.2; lag_m=24; advancing=1; call=maturity; trigger=as_filed; wac=0.03; wam_m=300.0; index_shift=0.0,60,0.02660061,0.02673738,3.52728744,12.72151534,0.03521865,none (smoothness only: prepay/default split not identified),10,0.72938374,6/10,RANKED (proxy: repline inputs assumed)
+ES0345721015,,,,,,,,,,,,,,,NO_STATE (no validated history or IPD rule)
+ES0345721023,,,,,,,,,,,,,,,NO_STATE (no validated history or IPD rule)

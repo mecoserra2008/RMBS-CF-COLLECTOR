@@ -99,6 +99,10 @@ def fmt(v) -> str:
         return ""
     if isinstance(v, bool):
         return str(v)
+    if hasattr(v, "item") and not isinstance(v, (str, bytes)):     # numpy scalar -> python scalar
+        v = v.item()
+        if isinstance(v, bool):
+            return str(v)
     if isinstance(v, float):
         if not math.isfinite(v):
             return ""

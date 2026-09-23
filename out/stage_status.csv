@@ -1,11 +1,8 @@
 stage,status,detail
-harvest,ok,"0 documents available; SOURCE_UNAVAILABLE hosts: assets.santandermedia.com,cnmv.es,edt-sg.com,ind.millenniumbcp.pt,internet.cnmv.es,www.cnmv.es"
-parse,ok,0 rows added/upgraded; 0/182 manifest documents validated (L1-L5)
 validate,ok,"0 failed checks, 0 rows downgraded, 283 gaps, year-ends tied 7, broken 0"
 gate,ok,"gate: INCOMPLETE 5, MANUAL_REQUIRED 3, NO_HISTORY 9"
 select,ok,"0 champions, 17 NO_RELIABLE_MODEL/MANUAL"
+cft,ok,"5 ISINs ranked; criterion check on 34 origins, mean Spearman(S, error) = +0.77"
 price,ok,0 ISINs priced
 bbg,ok,Bloomberg: MANUAL_REQUIRED: missing cashflows.csv
 report,ok,"COVERAGE.md, docs/FINDINGS.md, reports/*.html written"
-workbook,ok,"RMBS_CF_Valuation_Model.xlsx refreshed, LibreOffice recalc, 0 formula errors"
-selfcheck,ok,selfcheck ok

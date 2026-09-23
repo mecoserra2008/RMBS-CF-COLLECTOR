@@ -1,0 +1,28 @@
+# Exhaustive CFT configuration grid (Bloomberg CFT setting families). Every combination is projected and scored.
+# Levels in decimals; PSA / SDA in % of the standard curve; ABS in % of original count per month (decimal).
+prepay:
+  CPR: [0.0, 0.02, 0.04, 0.06, 0.08, 0.10, 0.12, 0.14, 0.16, 0.18, 0.20, 0.25, 0.30]
+  SMM: []                 # SMM is CPR re-expressed monthly: covered by CPR (listing both would duplicate rows)
+  PSA: [50, 100, 150, 200, 300, 400]
+  ABS: [0.005, 0.01, 0.015]
+default:
+  CDR: [0.0, 0.0025, 0.005, 0.01, 0.02, 0.03, 0.05]
+  MDR: []                 # MDR = CDR re-expressed monthly
+  SDA: [50, 100, 200, 400]
+severity: [0.2, 0.35, 0.5]          # only crossed with non-zero default settings
+recovery_lag_months: [6, 12, 24]    # idem
+advancing: [0, 1]                   # 0 none, 1 interest advanced on defaulted-not-liquidated loans
+call: [maturity, clean_up, call_date]      # call_date only where the manager states one (UCI 15)
+trigger: [as_filed, force_sequential, force_pro_rata]   # pro-rata modes only where the deal can amortise pro-rata
+index_shift: [0.0]                  # add e.g. -0.01, 0.01 for rate scenarios
+# repline inputs when the filings do not give them (state mode 'proxy'): searched as grid dimensions, flagged
+proxy_wac: [0.01, 0.02, 0.03]
+proxy_wam_months: [120, 180, 240, 300]
+horizon_quarters: 40                # smoothness is measured on the first 10 years of the projection
+smoothness:
+  history_points: 8                 # filed IPDs used for the seam trend
+  weights: {seam_level: 1.0, seam_slope: 1.0, roughness: 1.0, terminal: 0.0}
+  equivalence_delta: 0.05           # configurations within this score of the best form the 'equivalence class'
+consistency:                        # penalty for contradicting the last filing's collateral facts (where printed)
+  weights: {cpr: 1.0, cdr: 1.0, trigger: 1.0}
+top_n_output: 200

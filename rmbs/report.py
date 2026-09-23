@@ -109,6 +109,18 @@ def write_isin_page(run, isin, cov):
     bbg = [r for r in _read(run.out / "bbg_vs_model.csv") if r["isin"] == isin]
     scores = _read(run.out / "model_scores" / f"{isin}.csv")
     c = next(x for x in cov if x["isin"] == isin)
+    cft_rank = _read(run.out / "cft" / f"{isin}_ranking.csv")[:10]
+    cft_sum = next((r for r in _read(run.out / "cft" / "summary.csv") if r["isin"] == isin), {})
+    cft_html = "<p class=mut>Not ranked (no filed state).</p>" if not cft_rank else (
+        f"<p>{html.escape(cft_sum.get('status', ''))}; {cft_sum.get('n_configs', '')} configurations; equivalence class "
+        f"{cft_sum.get('equivalence_class_size', '')} (WAL {_num(cft_sum.get('equiv_wal_min'))}-{_num(cft_sum.get('equiv_wal_max'))}y); "
+        f"filing facts used: {html.escape(cft_sum.get('filed_facts_used', ''))}; out-of-sample Spearman(S, error) "
+        f"{_num(cft_sum.get('criterion_mean_spearman'))}, smoothest beats naive {cft_sum.get('criterion_smoothest_beats_naive', '')}</p>"
+        "<div class=wrap><table><tr><th>#</th><th>S</th><th>prepay</th><th>default</th><th>sev</th><th>lag</th><th>call</th>"
+        "<th>trigger</th><th>WAL</th><th>DM@ref</th></tr>" + "".join(
+            f"<tr><td>{r['rank']}</td><td>{_num(r['S'], 3)}</td><td>{html.escape(r['prepay'])}</td><td>{html.escape(r['default'])}</td>"
+            f"<td>{r['severity']}</td><td>{r['lag_m']}</td><td>{r['call']}</td><td>{r['trigger']}</td><td>{_num(r['wal_years'])}</td>"
+            f"<td>{_num(r['dm_bp_at_ref'], 1)}</td></tr>" for r in cft_rank) + "</table></div>")
     trs = "".join(f"<tr><td>{r['payment_date']}</td><td>{_num(r['beg_balance'])}</td><td>{_num(r['principal_paid'])}</td>"
                   f"<td>{_num(r['end_balance'])}</td><td>{_num(r['interest_paid'])}</td><td>{_num(r['coupon_rate'], 5)}</td>"
                   f"<td>{html.escape(str(r['parse_status'])[:40])}</td><td><a href=\"{html.escape(str(r['source_url']))}\">src</a></td></tr>"
@@ -122,6 +134,7 @@ def write_isin_page(run, isin, cov):
 <h2>Model selection</h2><p>Status <b>{html.escape(champ.get('status', ''))}</b>; best candidate <code>{html.escape(champ.get('cpr_model', ''))} | {html.escape(champ.get('call', ''))}</code>; gates {html.escape(champ.get('gates_passed', ''))}</p>{note}
 <div class=wrap><table><tr><th>candidate</th><th>S</th></tr>{''.join(f'<tr><td>{html.escape(a)}</td><td>{_num(b, 3)}</td></tr>' for a, b in top)}</table></div>
 {svg_fan(fan, 'balance', 'Projected class balance, p5-p95 / p25-p75 / median (EUR)')}
+<h2>CFT configurations ranked by smoothness</h2>{cft_html}
 <h2>Bloomberg comparison</h2><p>{'; '.join(html.escape(b['status'] + ' ' + b['metric']) for b in bbg)}</p>
 <h2>Payment history (issuer filings)</h2><div class=wrap><table><tr><th>IPD</th><th>beg</th><th>principal</th><th>end</th><th>interest</th><th>coupon</th><th>status</th><th></th></tr>{trs}</table></div>"""
     page = f"<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>{html.escape(s.ticker)}</title><style>{CSS}</style></head><body>{body}</body></html>\n"

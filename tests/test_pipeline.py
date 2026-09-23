@@ -32,6 +32,10 @@ def make_root(tmp: Path, isins=SUBSET) -> Path:
     cfg["stages"] = [x for x in cfg["stages"] if x != "workbook"]
     cfg["scoring"].update(draws_backtest=40, draws_fan=100, fan_steps=12)
     (tmp / "config" / "run.yaml").write_text(yaml.safe_dump(cfg))
+    cft = yaml.safe_load((ROOT / "config" / "cft.yaml").read_text())
+    cft.update(prepay={"CPR": [0.0, 0.05, 0.1, 0.15]}, default={"CDR": [0.0, 0.01]}, severity=[0.35],
+               recovery_lag_months=[12], advancing=[0], proxy_wac=[0.03], proxy_wam_months=[240], horizon_quarters=8, top_n_output=5)
+    (tmp / "config" / "cft.yaml").write_text(yaml.safe_dump(cft))
     return tmp
 
 
@@ -79,7 +83,7 @@ def test_champion_priced_on_synthetic_deal(tmp_path):
     (root / "out" / "yearend_checkpoints.csv").write_text("fund,isin_or_fund_senior,date,senior_notes_outstanding_kEUR,scope,source_url\n")
     cfg = yaml.safe_load((root / "config" / "run.yaml").read_text())
     cfg["scoring"]["gates"]["A6_win_share_min"] = 0.0
-    cfg["stages"] = ["parse", "validate", "gate", "select", "price", "bbg", "report"]
+    cfg["stages"] = ["parse", "validate", "gate", "select", "cft", "price", "bbg", "report"]
     (root / "config" / "run.yaml").write_text(yaml.safe_dump(cfg))
     assert run(root) == 0
     import csv
