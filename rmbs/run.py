@@ -25,7 +25,7 @@ from . import validate as V
 from .schema import SchemaError, write_table
 from .sources import MANUAL, REGISTRY
 
-STAGES = ["harvest", "parse", "validate", "gate", "select", "price", "bbg", "report", "selfcheck"]
+STAGES = ["harvest", "parse", "validate", "gate", "select", "price", "bbg", "report", "workbook", "selfcheck"]
 
 
 class Run:
@@ -306,6 +306,15 @@ class Run:
         from . import report as R
         R.write_all(self)
         return "COVERAGE.md, docs/FINDINGS.md, reports/*.html written"
+
+    def workbook(self):
+        from . import workbook as W
+        args = ["--config", str(self.root / "config" / "run.yaml")]
+        if not self.cfg.get("workbook_recalc", True):
+            args.append("--no-recalc")
+        if W.main(args) != 0:
+            raise RuntimeError("workbook: formula errors after recalculation (see log)")
+        return "RMBS_CF_Valuation_Model.xlsx refreshed" + ("" if "--no-recalc" in args else ", LibreOffice recalc, 0 formula errors")
 
     def selfcheck(self):
         from .selfcheck import check

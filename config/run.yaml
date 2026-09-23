@@ -8,7 +8,8 @@ latest_report_lag_days: 7         # expected IPDs run up to valuation_date - 7 d
 out_dir: out
 reports_dir: reports
 log_dir: logs
-stages: [harvest, parse, validate, gate, select, price, bbg, report, selfcheck]
+stages: [harvest, parse, validate, gate, select, price, bbg, report, workbook, selfcheck]
+workbook_recalc: true              # LibreOffice headless recalculation of the refreshed workbook
 scoring:                          # MODEL_SELECTION_PROTOCOL s.4 (mirrored in config/scoring.yaml for audit)
   price_ref: 98.5                 # no traded prices in filings: reference clean price (workbook default) for E_dm / DM fans
   draws_backtest: 200

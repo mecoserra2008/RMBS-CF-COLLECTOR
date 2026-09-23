@@ -29,6 +29,7 @@ def make_root(tmp: Path, isins=SUBSET) -> Path:
     shutil.copy(ROOT / "filing_locations.csv", tmp / "filing_locations.csv")
     cfg = yaml.safe_load((ROOT / "config" / "run.yaml").read_text())
     cfg.update(network=False, only=isins)
+    cfg["stages"] = [x for x in cfg["stages"] if x != "workbook"]
     cfg["scoring"].update(draws_backtest=40, draws_fan=100, fan_steps=12)
     (tmp / "config" / "run.yaml").write_text(yaml.safe_dump(cfg))
     return tmp

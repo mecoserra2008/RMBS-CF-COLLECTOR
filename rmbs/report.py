@@ -156,6 +156,22 @@ def write_findings(run):
     p.write_text(head.rstrip() + "\n\n" + "\n".join(lines) + "\n", encoding="utf-8")
 
 
+def write_zip(run) -> int:
+    """RMBS_reports_ALL.zip: every source PDF under reports/, the text captures, the manifest and the download log.
+    Fixed timestamps + sorted entries -> byte-stable archive."""
+    import zipfile
+    files = sorted(run.reports.rglob("*.pdf")) + sorted((run.root / "captures").rglob("*.txt"))
+    extra = [run.root / "filing_locations.csv", run.root / "download_log.csv"]
+    n = 0
+    with zipfile.ZipFile(run.root / "RMBS_reports_ALL.zip", "w", zipfile.ZIP_DEFLATED) as z:
+        for p in files + [e for e in extra if e.exists()]:
+            zi = zipfile.ZipInfo(str(p.relative_to(run.root)), date_time=(2026, 1, 1, 0, 0, 0))
+            zi.compress_type = zipfile.ZIP_DEFLATED
+            z.writestr(zi, p.read_bytes())
+            n += p.suffix == ".pdf"
+    return n
+
+
 def write_all(run):
     cov = coverage_rows(run)
     write_coverage(run, cov)
@@ -163,3 +179,4 @@ def write_all(run):
         write_isin_page(run, isin, cov)
     write_index(run, cov)
     write_findings(run)
+    write_zip(run)
