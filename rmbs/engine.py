@@ -183,7 +183,7 @@ def solve_dm(cfs, settle: dt.date, index: float, dirty: float) -> float:
     for _ in range(200):
         mid = 0.5 * (lo + hi)
         fm = pv(cfs, settle, index, mid) - dirty
-        if abs(fm) < 1e-8 * max(1.0, dirty) or hi - lo < 1e-12:
+        if fm == 0.0 or hi - lo < 1e-13:
             return mid
         if (fm > 0) == (flo > 0):
             lo, flo = mid, fm

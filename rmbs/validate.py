@@ -173,12 +173,17 @@ def yearend(isin: str, rows: list[dict], expected: list[dt.date], checkpoints: l
             out.append(rec)
             continue
         last_exp = max((e for e in expected if e <= d), default=None)
+        next_exp = min((e for e in expected if e > d), default=None)
         o = al.get(last_exp) if last_exp else None
-        if not o or fnum(obs[o], "end_balance") is None:
-            rec["result"] = "UNTESTABLE (last IPD before date not in chain)"
+        o2 = al.get(next_exp) if next_exp else None
+        if o and fnum(obs[o], "end_balance") is not None:
+            chain = fnum(obs[o], "end_balance") / 1e3
+        elif o2 and fnum(obs[o2], "beg_balance") is not None:     # balance is constant between IPDs
+            chain, o = fnum(obs[o2], "beg_balance") / 1e3, o2
+        else:
+            rec["result"] = "UNTESTABLE (IPDs around the date not in chain)"
             out.append(rec)
             continue
-        chain = fnum(obs[o], "end_balance") / 1e3
         k = sum(1 for r in rows if r["payment_date"] <= o and is_kEUR(r))
         tol = max(1.0, 0.5 * k) if is_kEUR(obs[o]) else 0.001
         diff = chain - rec["checkpoint_kEUR"]

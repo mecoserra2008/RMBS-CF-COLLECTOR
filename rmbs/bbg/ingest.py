@@ -28,7 +28,7 @@ def load(bbg_dir: Path) -> dict:
     cf, s1 = _read(bbg_dir / "cashflows.csv", CF_COLS)
     runs, s2 = _read(bbg_dir / "runs.csv", RUN_COLS)
     status = "ok" if s1 == s2 == "ok" else (s1 if s1 != "ok" else s2)
-    if cf and not runs:
+    if cf and not runs and not s2.startswith("SCHEMA_ERROR"):
         status = "UNUSABLE: cashflows.csv without runs.csv (configuration not captured)"
         cf = []
     return {"cashflows": cf, "runs": {r["run_id"]: r for r in runs}, "status": status}

@@ -17,6 +17,8 @@ from .candidates import CPR_MODELS, Candidate, grid, key_param
 from .metrics import nanmean, rmse, stab, zscores
 
 DEFAULT_WEIGHTS = {"E_dm": 0.30, "E_wal": 0.20, "E_prin": 0.20, "E_cum": 0.15, "CRPS": 0.10, "STAB": 0.05}
+DEFAULT_GATES = {"A2_U_max": 1.0, "A3_E_fac_h1_bp_max": 25, "A4_E_dm_h4_bp_max": 10, "A5_coverage": [0.72, 0.88],
+                 "A6_win_share_min": 0.60}
 DEFAULT_PENALTIES = {"U_ge_1": 0.50, "cov_off": 0.30, "bias": 0.25, "per_param_over_2": 0.10}
 
 
@@ -134,12 +136,13 @@ def evaluate_isin(isin: str, rows: list[dict], deal: dict, pooled_obs, gate_stat
     n_or = len(all_cuts)
     share = wins[champ] / n_or if n_or else 0.0
     leak_ok = leakage_check(champ, ctx, obs, cuts[:3])
+    gt = {**DEFAULT_GATES, **sc.get("gates", {})}
     gates = {"A1": gate_status == "PASS",
-             "A2": pick(t, 1, "U") < 1 and pick(t, 4, "U") < 1,
-             "A3": pick(t, 1, "E_fac") <= 25,
-             "A4": pick(t, 4, "E_dm") <= 10,
-             "A5": abs(pick(t, 1, "COV") - 0.80) <= 0.08,
-             "A6": share >= 0.60,
+             "A2": pick(t, 1, "U") < gt["A2_U_max"] and pick(t, 4, "U") < gt["A2_U_max"],
+             "A3": pick(t, 1, "E_fac") <= gt["A3_E_fac_h1_bp_max"],
+             "A4": pick(t, 4, "E_dm") <= gt["A4_E_dm_h4_bp_max"],
+             "A5": gt["A5_coverage"][0] <= pick(t, 1, "COV") <= gt["A5_coverage"][1],
+             "A6": share >= gt["A6_win_share_min"],
              "A7": leak_ok}
     failed = [k for k, ok in gates.items() if not ok]
     status = "CHAMPION" if not failed else "NO_RELIABLE_MODEL"

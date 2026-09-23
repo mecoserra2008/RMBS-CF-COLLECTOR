@@ -20,8 +20,9 @@ def load_yaml(path: Path) -> dict:
 
 def load_run(path: str | Path) -> dict:
     p = Path(path)
-    cfg = load_yaml(p if p.is_absolute() else ROOT / p)
-    cfg.setdefault("root", str(ROOT))
+    p = p if p.is_absolute() else (Path.cwd() / p if (Path.cwd() / p).exists() else ROOT / p)
+    cfg = load_yaml(p)
+    cfg.setdefault("root", str(p.resolve().parent.parent))      # <root>/config/run.yaml
     return cfg
 
 

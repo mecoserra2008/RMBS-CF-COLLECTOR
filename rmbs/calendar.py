@@ -83,6 +83,9 @@ def next_ipds(rules: list[dict], start: dt.date, n: int) -> list[dt.date]:
         nxt = ipd_schedule(rule, cur, cur + dt.timedelta(days=400))
         if not nxt:
             raise ValueError("IPD rule produced no dates")
+        in_force = rule_at(rules, nxt[0])            # the rule in force on the candidate date governs it
+        if in_force is not rule:
+            nxt = ipd_schedule(in_force, cur, cur + dt.timedelta(days=400)) or nxt
         out.append(nxt[0])
         cur = nxt[0]
     return out

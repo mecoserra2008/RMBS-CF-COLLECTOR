@@ -1,0 +1,27 @@
+{
+ "champion": {
+  "ES0345672010": "NO_RELIABLE_MODEL",
+  "ES0377992005": "NO_RELIABLE_MODEL (THIN_HISTORY)",
+  "XS0222684655": "NO_RELIABLE_MODEL"
+ },
+ "gaps": 109,
+ "gate": {
+  "ES0345672010": "INCOMPLETE",
+  "ES0377992005": "INCOMPLETE",
+  "XS0222684655": "INCOMPLETE"
+ },
+ "rows": {
+  "ES0345672010": 16,
+  "ES0377992005": 8,
+  "XS0222684655": 23
+ },
+ "yearend": [
+  "TIED",
+  "TIED",
+  "TIED",
+  "TIED",
+  "TIED",
+  "TIED",
+  "TIED"
+ ]
+}

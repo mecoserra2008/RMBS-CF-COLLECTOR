@@ -152,6 +152,7 @@ def write_findings(run):
              f"- Failed row/chain checks: {len(val)}"] + [f"  - {r['isin']} {r['payment_date']} {r['check']}: {r['detail']}" for r in val[:40]]
     lines += [f"- Year-end breaks: {len(ye)}"] + [f"  - {r['isin']} {r['date']}: chain {r['chain_kEUR']} vs audited {r['checkpoint_kEUR']} kEUR ({r['source_url']})" for r in ye]
     lines += [f"- IPD calendar deviations (observed vs prospectus rule): {len(cal)}"] + [f"  - {r['isin']} {r['observed']} vs rule {r['projected']}: {r['result']}" for r in cal[:40]]
+    p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(head.rstrip() + "\n\n" + "\n".join(lines) + "\n", encoding="utf-8")
 
 

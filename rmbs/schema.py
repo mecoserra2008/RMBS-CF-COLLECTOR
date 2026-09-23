@@ -75,7 +75,7 @@ def check_history_rows(rows: list[dict]) -> list[str]:
         st = str(r.get("parse_status", ""))
         if st and not st.startswith(STATUS_PREFIXES):
             errs.append(f"row {i}: parse_status {st[:30]!r} not a known status")
-    dates = [r["payment_date"] for r in rows]
+    dates = [r.get("payment_date", "") for r in rows]
     if dates != sorted(dates):
         errs.append("rows not sorted by payment_date")
     if len(set(dates)) != len(dates):

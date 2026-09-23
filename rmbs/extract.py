@@ -18,7 +18,9 @@ def pdf_text(pdf: Path, use_cache: bool = True, ocr: bool = True) -> tuple[str, 
         with pdfplumber.open(pdf) as doc:
             text = "\n".join((p.extract_text() or "") for p in doc.pages)
         method = "pdfplumber"
-    except Exception:
+    except (Exception, BaseException) as e:     # pdfminer raises on corrupt files; pyo3 panics are BaseException
+        if isinstance(e, (KeyboardInterrupt, SystemExit)):
+            raise
         if shutil.which("pdftotext"):
             text = subprocess.run(["pdftotext", "-layout", str(pdf), "-"], capture_output=True, text=True).stdout
             method = "pdftotext"

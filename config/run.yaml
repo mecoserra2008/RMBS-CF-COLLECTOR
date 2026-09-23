@@ -16,3 +16,4 @@ scoring:                          # MODEL_SELECTION_PROTOCOL s.4 (mirrored in co
   fan_steps: 40
   weights: {E_dm: 0.30, E_wal: 0.20, E_prin: 0.20, E_cum: 0.15, CRPS: 0.10, STAB: 0.05}
   penalties: {U_ge_1: 0.50, cov_off: 0.30, bias: 0.25, per_param_over_2: 0.10}
+  gates: {A2_U_max: 1.0, A3_E_fac_h1_bp_max: 25, A4_E_dm_h4_bp_max: 10, A5_coverage: [0.72, 0.88], A6_win_share_min: 0.60}
