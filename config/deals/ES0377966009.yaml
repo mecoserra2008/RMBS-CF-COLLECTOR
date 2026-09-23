@@ -1,0 +1,56 @@
+# Deal terms (PIPELINE_SPEC s.4). null = not yet read from the prospectus -> CONFIG_INCOMPLETE.
+isin: ES0377966009
+index: EURIBOR_3M
+day_basis: ACT/360
+margin_steps: []
+coupon_floor: null
+swap: null
+fees: null
+reserve:
+  observed:
+  - date: '2020-11-26'
+    balance: 8500000
+  note: at floor (Fitch Dec-2025)
+triggers: null
+clean_up_call_pct: null
+legal_final: '2049-02-26'
+first_ipd: null
+closing_date: '2007-03-13'
+pool_at_closing: null
+call_issuer_stated: null
+principal_shortfall_option: false
+publication_lag_days: 120
+family: tda
+unverified:
+- margin
+conflicts: []
+deal: TDA CAM 8, FTA
+series: A
+original_balance: 1635400000
+notes: 16354
+denomination: 100000
+margin_bp: null
+ipd_rule:
+  months:
+  - 2
+  - 5
+  - 8
+  - 11
+  day: 26
+  convention: following
+  calendar: TARGET
+amortisation:
+  mode: pro_rata_while_pool_factor_ge
+  threshold: 0.1
+  note: now irreversibly sequential (Fitch Dec-2025)
+sources:
+- field: notes/original/closing/IPD
+  url: https://www.cnmv.es/webservices/verdocumento/ver?t=%7B7507a87b-f1ec-46d7-8e5d-e690d38a9b8f%7D
+- field: legal_final
+  url: https://cbonds.com/bonds/593557/
+- field: amortisation
+  url: https://www.tradingview.com/news/reuters.com,2025-12-01:newsml_FIT9tGTZJ:0-fitch-upgrades-
+checks:
+- date: '2025-05-26'
+  balance: 142168265.72
+  source: BME RF boletin 26-May-2025 (check only)

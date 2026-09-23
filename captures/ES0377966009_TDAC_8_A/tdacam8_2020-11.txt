@@ -1,0 +1,11 @@
+# source: https://www.cnmv.es/webservices/verdocumento/ver?t=%7B7507a87b-f1ec-46d7-8e5d-e690d38a9b8f%7D
+# captured: original claude.ai session 22-Sep-2026 (text excerpt of the filing)
+TDA CAM 8 - Fondo de Titulización de Activos
+LIQUIDACION DEL PERIODO 26/08/20 - 26/11/20
+INFORMACION A LOS INVERSORES
+FECHA DE PAGO: 26 de Noviembre de 2020
+Importes en euros
+I. BONOS A ES0377966009 Sobre 16354 bonos Por Bono
+1. Saldo inicial (13/03/07): 1.635.400.000,00 € 100.000,00 €
+2. Pendiente de vencimiento en la anterior Fecha de Pago: 306.555.402,92 € 18.745,01 €
+II. BONOS B ES0377966017

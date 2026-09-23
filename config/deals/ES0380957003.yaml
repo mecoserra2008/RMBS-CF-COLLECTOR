@@ -1,0 +1,53 @@
+# Deal terms (PIPELINE_SPEC s.4). null = not yet read from the prospectus -> CONFIG_INCOMPLETE.
+# coupon_filed false: the Informacion Periodica prints the NEXT period's rate; this period's rate is the previous report's.
+isin: ES0380957003
+index: EURIBOR_3M
+day_basis: ACT/360
+margin_steps: []
+coupon_floor: null
+swap: null
+fees: null
+reserve:
+  observed:
+  - date: '2026-06-18'
+    balance: 11440000
+triggers:
+  arrears_90d_ratio_max: 0.02
+  observed_2026_06: 0.0899
+clean_up_call_pct: 0.1
+legal_final: '2045-12-18'
+first_ipd: null
+closing_date: '2006-04-28'
+pool_at_closing: 1430000010.21
+call_issuer_stated: '2027-12-20'
+principal_shortfall_option: false
+publication_lag_days: 45
+family: santander
+unverified: []
+conflicts:
+- 'legal final: santandermedia asset 18-Dec-2045 vs original workbook 18-Dec-2048'
+deal: F.T.A. U.C.I. 15
+series: A
+original_balance: 1340600000
+notes: 13406
+denomination: 100000
+margin_bp: 14
+ipd_rule:
+  months:
+  - 3
+  - 6
+  - 9
+  - 12
+  day: 18
+  convention: following
+  calendar: TARGET
+amortisation:
+  mode: pro_rata_unless_trigger
+  note: 90d+ arrears trigger reached -> B and C not amortised
+sources:
+- field: notes/margin/IPD/trigger/call date
+  url: https://assets.santandermedia.com/adobe/assets/urn:aaid:aem:51f2945f-4fa2-4b4e-9757-af0f49e01ebf/original/as/ES-U.C.I._15_Junio26-Informacion_Periodica-UCI_15.pdf
+- field: legal_final
+  url: https://assets.santandermedia.com/adobe/assets/urn:aaid:aem:1f751c04-3db7-404f-97be-02008f
+coupon_filed: false
+interest_rounding: per_note

@@ -1,0 +1,63 @@
+# Deal terms (PIPELINE_SPEC s.4). null = not yet read from the prospectus -> CONFIG_INCOMPLETE.
+isin: XS0260784318
+index: EURIBOR_3M
+day_basis: ACT/360
+margin_steps:
+- from: '2017-04-20'
+  margin_bp: 28
+  note: 'verified bound: 14bp on the Jul-2015 report, 28bp on the Apr-2017 report; the actual step-up IPD lies in (2015-07-20, 2017-04-20] and
+    must be read from the reports in between'
+coupon_floor: 0.0
+swap: null
+fees: null
+reserve:
+  observed:
+  - date: '2021-02-01'
+    balance: 9000000
+    note: at floor (Moody's)
+  required_rule: null
+triggers:
+  note: Pro-Rata Test read from each report; thresholds not transcribed
+clean_up_call_pct: 0.1
+legal_final: '2059-07-20'
+first_ipd: '2006-10-20'
+closing_date: null
+pool_at_closing: 1500000016.28
+call_issuer_stated: null
+principal_shortfall_option: false
+publication_lag_days: 5
+family: bcp
+unverified:
+- margin step-up IPD (bounded, see margin_steps)
+- 'coupon_floor_from: first floored IPD observed is Apr-2017 (earlier reports not read)'
+- clean_up_call_pct (from original model, prospectus not read)
+- legal_final day
+- swap
+- fees
+conflicts: []
+deal: Magellan Mortgages No. 4 plc
+series: A
+original_balance: 1413750000
+notes: 141375
+denomination: 10000
+margin_bp: 14
+coupon_floor_from: '2017-04-20'
+ipd_rule:
+  months:
+  - 1
+  - 4
+  - 7
+  - 10
+  day: 20
+  convention: following
+  calendar: PT
+amortisation:
+  mode: pro_rata_if_test_pass
+  note: pro-rata since Jul-2008 (Moody's Feb-2021)
+sources:
+- field: original_balance/notes/margins
+  url: HANDOFF.md s.4 (verified against filings in the original session)
+- field: pool_at_closing
+  url: https://ind.millenniumbcp.pt/pt/Institucional/investidores/securitizacoes/Documents/Magellan4-InvestorReport/InvestorReport_202607.pdf
+- field: classes A 1413.75m B 33.75m C 18.75m D 33.75m E 21.75m; due 2059
+  url: https://direct.euronext.com/api/PublicAnnouncements/RISDocument/2022.12.31%20Financial%20Statements

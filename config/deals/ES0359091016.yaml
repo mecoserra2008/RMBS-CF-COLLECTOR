@@ -1,0 +1,48 @@
+# Deal terms (PIPELINE_SPEC s.4). null = not yet read from the prospectus -> CONFIG_INCOMPLETE.
+isin: ES0359091016
+index: EURIBOR_3M
+day_basis: ACT/360
+margin_steps: []
+coupon_floor: null
+swap: null
+fees: null
+reserve:
+  note: fully depleted Mar-2013..Apr-2019; ~11% of target in 2022 (S&P)
+triggers: null
+clean_up_call_pct: null
+legal_final: '2049-06-22'
+first_ipd: null
+closing_date: '2006-11-14'
+pool_at_closing: null
+call_issuer_stated: null
+principal_shortfall_option: false
+publication_lag_days: 120
+family: tda
+unverified:
+- ipd_rule (inferred)
+- margin (only AAA weighted 13.44bp seen)
+conflicts: []
+deal: MADRID RMBS I, FTA
+series: A2
+original_balance: null
+notes: null
+denomination: 100000
+margin_bp: null
+ipd_rule:
+  months:
+  - 3
+  - 6
+  - 9
+  - 12
+  day: 22
+  convention: following
+  calendar: TARGET
+  inferred: from legal final 22-Jun-2049
+amortisation:
+  mode: sequential
+  note: pro-rata condition not met (S&P 2022)
+sources:
+- field: series/legal final
+  url: https://www.bolsasymercados.es/bme-exchange/docs/RF/boletin/RF_U/2025/06/17/
+- field: structure/reserve
+  url: https://www.spglobal.com/ratings/en/research/articles/220601-rating-actions-taken-on-madrid-rmbs

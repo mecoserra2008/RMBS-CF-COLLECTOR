@@ -33,7 +33,9 @@ SCHEMA = ["isin", "deal", "tranche", "report_month", "payment_date", "accrual_st
           "coll_cpr_reported", "coll_deemed_losses", "coll_recoveries", "coll_end_balance",
           "coll_end_balance_net", "wac", "arrears_90_365", "cum_default_ratio", "prorata_test",
           "reserve_balance", "coll_principal_total", "coll_cpr_12m", "next_coupon_rate", "next_index_rate",
-          "source_url", "source_section", "parse_status"]
+          "source_url", "source_section", "parse_status",
+          # extensions (HANDOFF 8.6 + reproduction gate inputs); appended so the History sheet keeps its column letters
+          "principal_due", "principal_shortfall", "sub_beg_balance", "sub_end_balance", "coll_beg_balance_net"]
 
 # --------------------------------------------------------------------------------------------- source map
 @dataclass
@@ -61,15 +63,15 @@ SOURCES = [
      status="NOT PUBLIC",note="as LUSI 4"),
  Src("ES0377992005","TDAC 5 A","TDA CAM 5, FTA","A","ES","cnmv_oir","Titulizacion de Activos SGFT",nif="V84466135",
      status="VERIFIED (listing)",note="CNMV OIR 'INFORMACION FECHA DE PAGO DEL FONDO' per IPD since 02/2020; earlier: CNMV hechos relevantes"),
- Src("ES0377993029","TDAC 6 A3","TDA CAM 6, FTA","A3","ES","cnmv_oir","Titulizacion de Activos SGFT",status="NIF TO RESOLVE"),
+ Src("ES0377993029","TDAC 6 A3","TDA CAM 6, FTA","A3","ES","cnmv_oir","Titulizacion de Activos SGFT",nif="V84664358"),
  Src("ES0377994019","TDAC 7 A2","TDA CAM 7, FTA","A2","ES","cnmv_oir","Titulizacion de Activos SGFT",nif="V84851724",
      status="VERIFIED (listing)"),
- Src("ES0377994027","TDAC 7 (A3?)","TDA CAM 7, FTA","TBC","ES","cnmv_oir","Titulizacion de Activos SGFT",nif="V84851724",
-     status="CLASS TBC",note="Not in the Aug-2026 universe; likely TDA CAM 7 sister tranche - confirm class in notice"),
- Src("ES0377966009","TDAC 8 A","TDA CAM 8, FTA","A","ES","cnmv_oir","Titulizacion de Activos SGFT",status="NIF TO RESOLVE"),
- Src("ES0377955010","TDAC 9 A2","TDA CAM 9, FTA","A2","ES","cnmv_oir","Titulizacion de Activos SGFT",status="NIF TO RESOLVE"),
- Src("ES0359091016","CAJAM 2006-1 A2","MADRID RMBS I, FTA","A2","ES","cnmv_oir","Titulizacion de Activos SGFT",
-     status="NIF TO RESOLVE",note="Bloomberg ticker CAJAM = Madrid RMBS I (Caja Madrid)"),
+ Src("ES0377994027","TDAC 7 A3","TDA CAM 7, FTA","A3","ES","cnmv_oir","Titulizacion de Activos SGFT",nif="V84851724",
+     status="CLASS A3 (BME 'BTN TDA CAM 7-A3 VBLE 02/2049'; Fitch 28-Feb-2023 'Class A3 ES0377994027')"),
+ Src("ES0377966009","TDAC 8 A","TDA CAM 8, FTA","A","ES","cnmv_oir","Titulizacion de Activos SGFT",nif="V85017986"),
+ Src("ES0377955010","TDAC 9 A2","TDA CAM 9, FTA","A2","ES","cnmv_oir","Titulizacion de Activos SGFT",nif="V85151918"),
+ Src("ES0359091016","CAJAM 2006-1 A2","MADRID RMBS I, FTA","A2","ES","cnmv_oir","Titulizacion de Activos SGFT",nif="V84889229",
+     note="Bloomberg ticker CAJAM = Madrid RMBS I (Caja Madrid)"),
  Src("ES0380957003","UCI 15 A","F.T.A. U.C.I. 15","A","ES","santander","Santander de Titulizacion SGFT",code="uci-15",
      status="VERIFIED (full index)",note="Fund page lists all 78 'Información Periódica' reports Mar-2007..Jun-2026 + Cuentas Anuales 2021-2025 on assets.santandermedia.com; p.3 BONOS PRINCIPAL, p.12+ monthly pool & CPR history since 2006"),
  Src("ES0338186010","UCI 16 A2","F.T.A. U.C.I. 16","A2","ES","santander","Santander de Titulizacion SGFT",code="uci-16",
@@ -166,6 +168,11 @@ def parse_bcp(txt: str, isin: str, url: str = "") -> dict:
              cum_default_ratio=first("Ratio ", pct, PCT, after="Net Cumulative Default Ratio"),
              prorata_test=(line_after(txt, "Pro-Rata Test ")[0] or "").strip().split()[0] if line_after(txt, "Pro-Rata Test ")[0] else "",
              reserve_balance=first("(b) Cash Reserve Account "))
+    beg_all, end_all = vec("Total Beginning Balance Prior to Distribution "), vec("Total Ending Balance Subsequent to Distribution ")
+    if col == 0 and len(beg_all) > 1 and len(end_all) == len(beg_all):      # subordinate classes (B..E) for the waterfall
+        r["sub_beg_balance"] = round(sum(num(x) for x in beg_all[1:]), 2)
+        r["sub_end_balance"] = round(sum(num(x) for x in end_all[1:]), 2)
+    r["coll_beg_balance_net"] = first("Beginning Principal Outstanding Balance (net of Deemed Losses) ")
     pdl = vec("Principal Deficiency Ledger ")
     r["pdl_balance"] = num(pdl[col]) if len(pdl) > col else ""
     nn, _ = line_after(txt, f"Number of outstanding Class {cls} Notes ")
@@ -371,10 +378,10 @@ def _selftest_uci():
 
 # --------------------------------------------------------------------------------------------- EdT annual accounts (Nota 'movimiento de los Bonos')
 SERIES_BY_ISIN = {"ES0345672010": "A2", "ES0345721015": "A2a", "ES0345721023": "A2b"}
-def parse_edt_accounts(txt: str, isin: str, url: str = "") -> list:
+def parse_edt_accounts(txt: str, isin: str, url: str = "", series: str | None = None) -> list:
     """Per-IPD amortisation of one series from the 'movimiento de los Bonos' table (kEUR, 2 columns per series:
     non-current, current). Tested on Hipocat 11 Cuentas Anuales 2016."""
-    ser = SERIES_BY_ISIN.get(isin)
+    ser = series or SERIES_BY_ISIN.get(isin)
     hdr = re.search(r"((?:Serie \w+\s*){2,})", txt)
     if not ser or not hdr: return []
     names = re.findall(r"Serie (\w+)", hdr.group(1))

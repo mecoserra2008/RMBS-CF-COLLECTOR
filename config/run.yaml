@@ -1,0 +1,18 @@
+# python -m rmbs.run --config config/run.yaml
+valuation_date: 2026-09-23        # fixed -> deterministic outputs (settlement for pricing = this date)
+seed: 20260923
+network: true                     # harvest stage downloads; unreachable hosts degrade to SOURCE_UNAVAILABLE
+pattern_search: true              # try BCP / EdT file-name variants for missing periods
+min_spacing_s: 0.4
+latest_report_lag_days: 7         # expected IPDs run up to valuation_date - 7 days
+out_dir: out
+reports_dir: reports
+log_dir: logs
+stages: [harvest, parse, validate, gate, select, price, bbg, report, selfcheck]
+scoring:                          # MODEL_SELECTION_PROTOCOL s.4 (mirrored in config/scoring.yaml for audit)
+  price_ref: 98.5                 # no traded prices in filings: reference clean price (workbook default) for E_dm / DM fans
+  draws_backtest: 200
+  draws_fan: 1000
+  fan_steps: 40
+  weights: {E_dm: 0.30, E_wal: 0.20, E_prin: 0.20, E_cum: 0.15, CRPS: 0.10, STAB: 0.05}
+  penalties: {U_ge_1: 0.50, cov_off: 0.30, bias: 0.25, per_param_over_2: 0.10}

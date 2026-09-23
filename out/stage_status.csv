@@ -1,0 +1,6 @@
+stage,status,detail
+select,ok,"0 champions, 17 NO_RELIABLE_MODEL/MANUAL"
+price,ok,0 ISINs priced
+bbg,ok,Bloomberg: MANUAL_REQUIRED: missing cashflows.csv
+report,ok,"COVERAGE.md, docs/FINDINGS.md, reports/*.html written"
+selfcheck,ok,selfcheck ok

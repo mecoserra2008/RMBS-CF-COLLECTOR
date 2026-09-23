@@ -160,12 +160,12 @@ OIR = "https://www.cnmv.es/portal/otra-informacion-relevante/resultado-oir.aspx?
 HR_OLD = "https://www.cnmv.es/portal/hr/resultado-hr.aspx?nif={nif}&division=3&page={p}"   # pre-02/2020 archive
 TDA = {  # isin: (ticker, fund name as registered at CNMV, NIF or None)
     "ES0377992005": ("TDAC_5_A", "TDA CAM 5", "V84466135"),
-    "ES0377993029": ("TDAC_6_A3", "TDA CAM 6", None),
+    "ES0377993029": ("TDAC_6_A3", "TDA CAM 6", "V84664358"),
     "ES0377994019": ("TDAC_7_A2", "TDA CAM 7", "V84851724"),
-    "ES0377994027": ("TDAC_7_classTBC", "TDA CAM 7", "V84851724"),
-    "ES0377966009": ("TDAC_8_A", "TDA CAM 8", None),
-    "ES0377955010": ("TDAC_9_A2", "TDA CAM 9", None),
-    "ES0359091016": ("CAJAM_2006-1_A2", "MADRID RMBS I", None),
+    "ES0377994027": ("TDAC_7_A3", "TDA CAM 7", "V84851724"),
+    "ES0377966009": ("TDAC_8_A", "TDA CAM 8", "V85017986"),
+    "ES0377955010": ("TDAC_9_A2", "TDA CAM 9", "V85151918"),
+    "ES0359091016": ("CAJAM_2006-1_A2", "MADRID RMBS I", "V84889229"),
 }
 def resolve_nif(name):
     soup = html("https://www.cnmv.es/portal/Consultas/FTA/Listado_ROFT.aspx")
@@ -215,6 +215,9 @@ def get_cnmv(isin, out, keep=("FECHA DE PAGO", "PAGO", "LIQUIDACI", "INFORMACION
     return got
 
 # ------------------------------------------------------------------ parse
+SERIES = {"ES0377992005": "A", "ES0377993029": "A3", "ES0377994019": "A2", "ES0377994027": "A3",   # CNMV prospectus / BME
+          "ES0377966009": "A", "ES0377955010": "A2", "ES0359091016": "A2"}
+
 def parse_folder(isin, folder):
     rows = []
     for pdf in sorted(folder.glob("*.pdf")):
@@ -226,7 +229,7 @@ def parse_folder(isin, folder):
             elif isin in SANT_PAGES and "VALORES EMITIDOS" in txt.upper():
                 r = H.parse_uci(txt, isin, pdf.name)
             elif isin in TDA and "liquidaciones intermedias" in txt.lower():
-                rows += H.parse_tda_accounts(txt, isin, pdf.name, serie={"ES0377992005": "A"}.get(isin, "A")); continue
+                rows += H.parse_tda_accounts(txt, isin, pdf.name, serie=SERIES[isin]); continue
             elif isin in TDA and isin in txt:
                 r = H.parse_tda_notice(txt, isin, pdf.name)
             elif isin in HIPO:

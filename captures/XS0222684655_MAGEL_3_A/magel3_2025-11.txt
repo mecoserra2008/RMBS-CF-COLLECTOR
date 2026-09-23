@@ -1,0 +1,59 @@
+# source: https://ind.millenniumbcp.pt/pt/Institucional/investidores/securitizacoes/Documents/Magellan3-InvestorReport/Investor-Report-2025-11.pdf
+# captured: original claude.ai session 22-Sep-2026 (text of the issuer PDF)
+Magellan Mortgages No. 3 Report November 2025
+1. Security Level Information
+Issuer Name
+Security Class Name Class A Class B Class C Class D Class E
+ISIN XS0222684655 XS0222691510 XS0222691940 XS0222698523 XS0222698952
+Bloomberg Ticker MAGEL 3 A MAGEL 3 B MAGEL 3 C MAGEL 3 D MAGEL 3 E
+Total Original Balance 1 413 750 000.00 33 750 000.00 15 750 000.00 36 750 000.00 19 600 000.00
+Total Beginning Balance Prior to Distribution 127 626 281.25 3 833 190.00 1 788 822.00 4 173 918.00 0.00
+Total Ending Balance Subsequent to Distribution 123 550 440.00 3 710 778.75 1 731 696.75 4 040 625.75 0.00
+Total Principal Distribution 4 075 841.25 122 411.25 57 125.25 133 292.25 0.00
+Pool Factor 8.73920000% 10.99490000% 10.99490000% 10.99490000% 0.00000000%
+Principal Deficiency Ledger 0.00 0.00 0.00 0.00 n/a
+Total Interest Distributions 740 714.57 23 409.72 11 828.88 32 665.08 0.00
+Payment Date 17/nov/25 17/nov/25 17/nov/25 17/nov/25 17/nov/25
+Quarterly Collection Date 31/out/25 31/out/25 31/out/25 31/out/25 31/out/25
+Calculation Period 81 81 81 81 81
+Accrual Beginning Date 18/ago/25 18/ago/25 18/ago/25 18/ago/25 18/ago/25
+Accrual Ending Date 17/nov/25 17/nov/25 17/nov/25 17/nov/25 17/nov/25
+Accrual Period 91 days 91 days 91 days 91 days 91 days
+Accrual Rate 2.296 % 2.416 % 2.616 % 3.096 % 3.536 %
+Euro Reference Rate 2.036 % 2.036 % 2.036 % 2.036 % 2.036 %
+Spread (bps) 26 38 58 106 150
+Denomination 902.75 1 135.76 1 135.76 1 135.76 0.00
+Day Basis Act/360 Act/360 Act/360 Act/360 Act/360
+Reset Rate Effective Date 2025/08/13 2025/08/13 2025/08/13 2025/08/13 2025/08/13
+New Denomination for the next period 873.92 1 099.49 1 099.49 1 099.49 0.00
+2. Collateral Level Information
+Mortgage Asset Portfolio
+Amount Nr of Loans
+Beginning Principal Outstanding Balance 146 777 284.39 5 394
+Beginning Principal Outstanding Balance (net of Deemed Losses) 137 424 609.34
+Principal Redemption 4 480 067.98 107
+ Scheduled Principal Redemption 2 403 945.52
+ Prepayments 1 797 131.61
+ Retired Mortgages Assets for non-permitted variations 278 990.85
+CPR 4.90%
+Deemed Principal Losses 3 297.38
+Principal Recoveries (to the extent of a debit balance recorded on the PDL) 95 781.59
+Ending Principal Outstanding Balance 142 297 216.41 5 287
+Ending Principal Outstanding Balance (net of Deemed Losses) 133 037 025.57
+Ending Principal Outstanding Balance at Closing Date 1 495 358 931.35 24 378
+31/jul/25 31/out/25
+WA Interest Rate 3.082 % 3.078 %
+3. Triggers and Tests Determinations
+Portfolio Trigger Event
+Mortgage Loans in arrears (90 - 365 days) 385 037.22
+Aggregate Principal Outstanding Balance of the Mortgage Loans on 21 June 2005 (CDD) 1 500 000 031.92
+Ratio 0.03%
+Net Cumulative Default Ratio
+Aggregate Principal Outstanding Balance of the Mortgage Assets as at the CDD 1 500 000 031.92
+Ratio 0.56%
+Pro-Rata Test PASS
+(b) Cash Reserve Account 9 000 000.00
+6. Principal Distribution IPD 17 nov 2025
+Number of outstanding Class A Notes 141 375
+Class A Notes Principal Payment - per Note 28.83
+Class A Notes Principal Payment 4 075 841.25

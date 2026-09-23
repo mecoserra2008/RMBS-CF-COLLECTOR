@@ -1,0 +1,48 @@
+# source: https://ind.millenniumbcp.pt/pt/Institucional/investidores/securitizacoes/Documents/Magellan3-InvestorReport/InvestorReport_202605.pdf
+# captured: original claude.ai session 22-Sep-2026 (text of the issuer PDF)
+Magellan Mortgages No. 3 Report May 2026
+1. Security Level Information
+Security Class Name Class A Class B Class C Class D Class E
+ISIN XS0222684655 XS0222691510 XS0222691940 XS0222698523 XS0222698952
+Total Original Balance 1,413,750,000.00 33,750,000.00 15,750,000.00 36,750,000.00 19,600,000.00
+Total Beginning Balance Prior to Distribution 118,524,558.75 3,559,815.00 1,661,247.00 3,876,243.00 0.00
+Total Ending Balance Subsequent to Distribution 114,598,575.00 3,441,892.50 1,606,216.50 3,747,838.50 0.00
+Total Principal Distribution 3,925,983.75 117,922.50 55,030.50 128,404.50 0.00
+Pool Factor 8.10600000% 10.19820000% 10.19820000% 10.19820000% 0.00000000%
+Principal Deficiency Ledger 0.00 0.00 0.00 0.00 n/a
+Total Interest Distributions 650,146.71 20,570.98 10,411.96 28,842.69 0.00
+Payment Date 15-May-26 15-May-26 15-May-26 15-May-26 15-May-26
+Accrual Beginning Date 16-Feb-26 16-Feb-26 16-Feb-26 16-Feb-26 16-Feb-26
+Accrual Ending Date 15-May-26 15-May-26 15-May-26 15-May-26 15-May-26
+Accrual Period 88 days 88 days 88 days 88 days 88 days
+Accrual Rate 2.244 % 2.364 % 2.564 % 3.044 % 3.484 %
+Euro Reference Rate 1.984 % 1.984 % 1.984 % 1.984 % 1.984 %
+Spread (bps) 26 38 58 106 150
+Denomination 838.37 1,054.76 1,054.76 1,054.76 0.00
+Day Basis Act/360 Act/360 Act/360 Act/360 Act/360
+New Denomination for the next period 810.60 1,019.82 1,019.82 1,019.82 0.00
+2. Collateral Level Information
+Beginning Principal Outstanding Balance 136,840,625.78 5,148
+Beginning Principal Outstanding Balance (net of Deemed Losses) 127,624,067.42
+Principal Redemption 4,246,964.97 93
+ Scheduled Principal Redemption 2,305,831.99
+ Prepayments 1,864,443.59
+ Retired Mortgages Assets for non-permitted variations 76,689.39
+CPR 5.43%
+Deemed Principal Losses 3,747.90
+Principal Recoveries (to the extent of a debit balance recorded on the PDL) 24,537.20
+Ending Principal Outstanding Balance 132,593,660.81 5,055
+Ending Principal Outstanding Balance (net of Deemed Losses) 123,397,891.75
+31-Jan-26 30-Apr-26
+WA Interest Rate 3.074 % 2.994 %
+3. Triggers and Tests Determinations
+Mortgage Loans in arrears (90 - 365 days) 331,571.96
+Net Cumulative Default Ratio
+Aggregate Principal Outstanding Balance of the Mortgage Assets as at the CDD 1,500,000,031.92
+Ratio 0.56%
+Pro-Rata Test PASS
+(b) Cash Reserve Account 9,000,000.00
+6. Principal Distribution IPD 15 May 2026
+Number of outstanding Class A Notes 141,375
+Class A Notes Principal Payment - per Note 27.77
+Class A Notes Principal Payment 3,925,983.75

@@ -1,0 +1,2 @@
+isin,candidate,cpr_model,cdr_model,recovery,call,n_params,h,n_obs,E_fac,E_prin,E_cum,E_wal,E_dm,U,CRPS,COV,BIAS,STAB,S,win_share
+XS0260784318,cpr_pooled|cdr_zero|rec_none|call_never,cpr_pooled,cdr_zero,rec_none,call_never,1,4,3,56.47405516,0.18704847,0.17917041,,,3.11208808,0.02233797,0.33333333,0.07102219,0.05931251,1.05,0.0

@@ -1,0 +1,43 @@
+# Deal terms (PIPELINE_SPEC s.4). null = not yet read from the prospectus -> CONFIG_INCOMPLETE.
+isin: ES0345721023
+index: EURIBOR_3M
+day_basis: ACT/360
+margin_steps: []
+coupon_floor: null
+swap: null
+fees: null
+reserve: null
+triggers: null
+clean_up_call_pct: null
+legal_final: null
+first_ipd: null
+closing_date: '2005-11-30'
+pool_at_closing: null
+call_issuer_stated: null
+principal_shortfall_option: false
+publication_lag_days: 120
+family: edt
+unverified:
+- 'notes (inferred: original / 100,000)'
+conflicts: []
+deal: HIPOCAT 9, FTA
+series: A2b
+original_balance: 236200000
+notes: 2362
+denomination: 100000
+margin_bp: 13
+ipd_rule:
+  months:
+  - 1
+  - 4
+  - 7
+  - 10
+  day: 15
+  convention: following
+  calendar: TARGET
+amortisation: null
+sources:
+- field: margin/IPD/series
+  url: https://edt-sg.com/intranet/fondos/FGH09/IFGH09N01260228.pdf
+- field: original balance
+  url: https://www.spglobal.com/ratings/en/research/articles/220923-spanish-rmbs-hipocat-9-class-

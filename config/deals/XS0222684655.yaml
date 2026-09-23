@@ -1,0 +1,63 @@
+# Deal terms (PIPELINE_SPEC s.4). null = not yet read from the prospectus -> CONFIG_INCOMPLETE.
+isin: XS0222684655
+index: EURIBOR_3M
+day_basis: ACT/360
+margin_steps:
+- from: '2012-08-15'
+  margin_bp: 26
+coupon_floor: 0.0
+swap: null
+fees: null
+reserve:
+  observed:
+  - date: '2009-02-16'
+    balance: 13500000
+  - date: '2026-08-17'
+    balance: 9000000
+  required_rule: null
+triggers:
+  prorata_A_over_A_orig_max: null
+  arrears_90_365_ratio_max: null
+  note: test result is read from each report (Pro-Rata Test PASS/FAIL); thresholds not yet transcribed from the prospectus
+clean_up_call_pct: 0.1
+legal_final: '2058-05-15'
+first_ipd: '2005-08-15'
+closing_date: null
+pool_at_closing: 1500000031.92
+call_issuer_stated: null
+principal_shortfall_option: false
+publication_lag_days: 5
+family: bcp
+unverified:
+- legal_final day (Notes due 2058 per Euronext RIS; day from original model)
+- 'coupon_floor_from: Aug-2017 coupon -0.069%, Nov-2017 not read'
+- swap
+- fees
+conflicts: []
+deal: Magellan Mortgages No. 3 plc
+series: A
+original_balance: 1413750000
+notes: 141375
+denomination: 10000
+margin_bp: 13
+coupon_floor_from: '2018-01-01'
+ipd_rule:
+  months:
+  - 2
+  - 5
+  - 8
+  - 11
+  day: 15
+  convention: following
+  calendar: PT
+amortisation:
+  mode: pro_rata_if_test_pass
+  switch_to_sequential_if:
+  - Pro-Rata Test FAIL (report Sec.3)
+sources:
+- field: original_balance/notes/margin/step-up/floor
+  url: HANDOFF.md s.4 (verified against filings in the original session)
+- field: pool_at_closing/clean_up/reserve
+  url: https://ind.millenniumbcp.pt/pt/Institucional/investidores/securitizacoes/Documents/Magellan3-InvestorReport/Investor-Report-202608.pdf
+- field: all classes A 1413.75m B 33.75m C 15.75m D 36.75m
+  url: https://direct.euronext.com/api/PublicAnnouncements/RISDocument/ANN136725.pdf

@@ -1,0 +1,50 @@
+# Deal terms (PIPELINE_SPEC s.4). null = not yet read from the prospectus -> CONFIG_INCOMPLETE.
+isin: ES0377994019
+index: EURIBOR_3M
+day_basis: ACT/360
+margin_steps: []
+coupon_floor: null
+swap: null
+fees: null
+reserve: null
+triggers: null
+clean_up_call_pct: null
+legal_final: '2049-02-26'
+first_ipd: null
+closing_date: null
+pool_at_closing: null
+call_issuer_stated: null
+principal_shortfall_option: false
+publication_lag_days: 120
+family: tda
+unverified:
+- ipd_rule (inferred)
+- denomination
+- A2/A3 sequencing
+conflicts: []
+deal: TDA CAM 7, FTA
+series: A2
+original_balance: null
+notes: null
+denomination: 100000
+margin_bp: null
+ipd_rule:
+  months:
+  - 2
+  - 5
+  - 8
+  - 11
+  day: 26
+  convention: following
+  calendar: TARGET
+  inferred: from legal final 26-Feb-2049
+amortisation:
+  mode: sequential
+  note: 'A1/A2/A3 order per prospectus not yet read; Moody''s: sequential'
+sources:
+- field: series/legal_final
+  url: https://www.bolsasymercados.es (BTN TDA CAM 7-A2/A3 VBLE 02/2049)
+- field: structure
+  url: https://www.cnmv.es/webservices/verdocumento/ver?t=%7B73031219-ef1f-4b4c-b55c-7a977d6aa63c%7D (Moody's, via CNMV OIR)
+- field: A3 ISIN
+  url: Fitch 28-Feb-2023 rating action 'Class A3 ES0377994027'

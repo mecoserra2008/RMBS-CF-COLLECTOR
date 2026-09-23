@@ -1,0 +1,48 @@
+# Deal terms (PIPELINE_SPEC s.4). null = not yet read from the prospectus -> CONFIG_INCOMPLETE.
+isin: ES0377993029
+index: EURIBOR_3M
+day_basis: ACT/360
+margin_steps: []
+coupon_floor: null
+swap: null
+fees: null
+reserve: null
+triggers: null
+clean_up_call_pct: null
+legal_final: '2044-04-28'
+first_ipd: null
+closing_date: null
+pool_at_closing: null
+call_issuer_stated: null
+principal_shortfall_option: false
+publication_lag_days: 120
+family: tda
+unverified:
+- ipd_rule (inferred from legal final date)
+- denomination
+conflicts:
+- 'amortisation: Moody''s sequential vs Fitch pro-rata until pool < 10%'
+deal: TDA CAM 6, FTA
+series: A3
+original_balance: null
+notes: null
+denomination: 100000
+margin_bp: null
+ipd_rule:
+  months:
+  - 1
+  - 4
+  - 7
+  - 10
+  day: 28
+  convention: following
+  calendar: TARGET
+  inferred: from legal final 28-Apr-2044
+amortisation:
+  mode: sequential
+  note: 'Moody''s: sequential, non-amortising reserve; Fitch: sequential once pool < 10%'
+sources:
+- field: series A3
+  url: https://www.cnmv.es/webservices/verdocumento/ver?t=%7B7f7cd979-5628-4226-bf82-7ac9aadb8836%7D
+- field: legal_final
+  url: https://cbonds.com/bonds/607915/

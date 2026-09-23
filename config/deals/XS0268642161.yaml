@@ -1,0 +1,32 @@
+# Deal terms (PIPELINE_SPEC s.4). null = not yet read from the prospectus -> CONFIG_INCOMPLETE.
+isin: XS0268642161
+index: EURIBOR_3M
+day_basis: ACT/360
+margin_steps: []
+coupon_floor: null
+swap: null
+fees: null
+reserve: null
+triggers: null
+clean_up_call_pct: null
+legal_final: '2059-07-15'
+first_ipd: null
+closing_date: null
+pool_at_closing: null
+call_issuer_stated: null
+principal_shortfall_option: false
+publication_lag_days: null
+family: manual
+unverified: []
+conflicts: []
+deal: Lusitano Mortgages No. 5 plc
+series: A
+original_balance: null
+notes: null
+denomination: null
+margin_bp: null
+ipd_rule: null
+amortisation: null
+sources:
+- field: all
+  url: 'manual: Citi Agency & Trust investor reporting (not public); ESFG SEC 20-F/6-K; yumpu ISE listing particulars'

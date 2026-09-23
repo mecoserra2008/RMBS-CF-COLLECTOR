@@ -1,0 +1,32 @@
+# Deal terms (PIPELINE_SPEC s.4). null = not yet read from the prospectus -> CONFIG_INCOMPLETE.
+isin: ES0338186010
+index: EURIBOR_3M
+day_basis: ACT/360
+margin_steps: []
+coupon_floor: null
+swap: null
+fees: null
+reserve: null
+triggers: null
+clean_up_call_pct: null
+legal_final: null
+first_ipd: null
+closing_date: null
+pool_at_closing: null
+call_issuer_stated: null
+principal_shortfall_option: false
+publication_lag_days: 45
+family: santander
+unverified:
+- IPD 16-Sep-2026 announced on BME (HANDOFF) - months not confirmed
+conflicts: []
+deal: F.T.A. U.C.I. 16
+series: A2
+original_balance: null
+notes: null
+denomination: null
+margin_bp: null
+ipd_rule: null
+sources:
+- field: series A2; deal total 1,819.8m
+  url: https://www.spglobal.com/ratings/en/regulatory/article/-/view/sourceId/13391087

@@ -1,0 +1,18 @@
+isin,cpr_model,cdr_model,recovery,call,params_json,S,U_h1,E_dm_h4,E_fac_h1,coverage,n_origins,gates_passed,fitted_at,status
+XS0222684655,cpr_ewma,cdr_zero (bond-level: defaults embedded in paydown rate),rec_none,call_never,"{""half_life"": 1, ""level"": 0.12757219}",-0.96921261,0.74445598,,3.31386767,0.66666667,3,"A2,A3,A7 | failed A1,A4,A5,A6",2026-09-23,NO_RELIABLE_MODEL
+XS0260784318,cpr_pooled,cdr_zero (bond-level: defaults embedded in paydown rate),rec_none,call_at_threshold,"{""level"": 0.11057003, ""w"": 0.94643796}",1.05,,,,,0,"A7 | failed A1,A2,A3,A4,A5,A6",2026-09-23,NO_RELIABLE_MODEL (THIN_HISTORY)
+XS0230694233,,,,,,,,,,,,CONFIG_INCOMPLETE,2026-09-23,MANUAL_REQUIRED
+XS0268642161,,,,,,,,,,,,CONFIG_INCOMPLETE,2026-09-23,MANUAL_REQUIRED
+XS0312981649,,,,,,,,,,,,CONFIG_INCOMPLETE,2026-09-23,MANUAL_REQUIRED
+ES0377992005,cpr_pooled,cdr_zero (bond-level: defaults embedded in paydown rate),rec_none,call_never,"{""level"": 0.1558114, ""w"": 0.99862132}",1.05,1.32421661,1.51799619,7.64851463,0.0,2,"A3,A4,A6,A7 | failed A1,A2,A5",2026-09-23,NO_RELIABLE_MODEL (THIN_HISTORY)
+ES0377993029,,,,,,,,,,,,CONFIG_INCOMPLETE,2026-09-23,NO_RELIABLE_MODEL
+ES0377994019,,,,,,,,,,,,CONFIG_INCOMPLETE,2026-09-23,NO_RELIABLE_MODEL
+ES0377994027,,,,,,,,,,,,CONFIG_INCOMPLETE,2026-09-23,NO_RELIABLE_MODEL
+ES0377966009,,,,,,,,,,,,NO_HISTORY (0 validated IPDs),2026-09-23,NO_RELIABLE_MODEL
+ES0377955010,,,,,,,,,,,,CONFIG_INCOMPLETE,2026-09-23,NO_RELIABLE_MODEL
+ES0359091016,,,,,,,,,,,,CONFIG_INCOMPLETE,2026-09-23,NO_RELIABLE_MODEL
+ES0380957003,,,,,,,,,,,,NO_HISTORY (2 validated IPDs),2026-09-23,NO_RELIABLE_MODEL
+ES0338186010,,,,,,,,,,,,CONFIG_INCOMPLETE,2026-09-23,NO_RELIABLE_MODEL
+ES0345672010,cpr_last,cdr_zero (bond-level: defaults embedded in paydown rate),rec_none,call_never,"{""level"": 0.08239704}",-0.20734963,1.0,1.58815086,18.39427267,1.0,2,"A3,A4,A6,A7 | failed A1,A2,A5",2026-09-23,NO_RELIABLE_MODEL
+ES0345721015,,,,,,,,,,,,NO_HISTORY (0 validated IPDs),2026-09-23,NO_RELIABLE_MODEL
+ES0345721023,,,,,,,,,,,,NO_HISTORY (0 validated IPDs),2026-09-23,NO_RELIABLE_MODEL

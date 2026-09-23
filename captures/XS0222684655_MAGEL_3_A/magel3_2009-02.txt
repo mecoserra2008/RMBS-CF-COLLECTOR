@@ -1,0 +1,58 @@
+# source: https://ind.millenniumbcp.pt/pt/Institucional/investidores/securitizacoes/Documents/Magellan3-InvestorReport/200902Magellan3_InvestorReport.pdf
+# captured: original claude.ai session 22-Sep-2026 (text of the issuer PDF)
+Magellan Mortgages No. 3 Report February 2009
+1. Security Level Information
+Issuer Name
+Security Class Name Class A Class B Class C Class D Class E
+ISIN XS0222684655 XS0222691510 XS0222691940 XS0222698523 XS0222698952
+Bloomberg Ticker MAGEL 3 A MAGEL 3 B MAGEL 3 C MAGEL 3 D MAGEL 3 E
+Total Original Balance 1,413,750,000.00 33,750,000.00 15,750,000.00 36,750,000.00 19,600,000.00
+Total Beginning Balance Prior to Distribution 832,103,561.25 24,992,921.25 11,663,363.25 27,214,514.25 0.00
+Total Ending Balance Subsequent to Distribution 797,883,742.50 23,965,065.00 11,183,697.00 26,095,293.00 0.00
+Total Principal Distribution 34,219,818.75 1,027,856.25 479,666.25 1,119,221.25 0.00
+Pool Factor 56.43740000% 71.00760000% 71.00760000% 71.00760000% 0.00000000%
+Principal Deficiency Ledger 0.00 0.00 0.00 -649,422.07 n/a
+Total Interest Distributions 9,202,256.40 280,188.00 133,702.64 328,482.97 0.00
+Payment Date 16/Feb/09 16/Feb/09 16/Feb/09 16/Feb/09 16/Feb/09
+Quarterly Collection Date 31/Jan/09 31/Jan/09 31/Jan/09 31/Jan/09 31/Jan/09
+Calculation Period 14 14 14 14 14
+Accrual Beginning Date 17/Nov/08 17/Nov/08 17/Nov/08 17/Nov/08 17/Nov/08
+Accrual Ending Date 16/Feb/09 16/Feb/09 16/Feb/09 16/Feb/09 16/Feb/09
+Accrual Period 91 days 91 days 91 days 91 days 91 days
+Accrual Rate 4.375 % 4.435 % 4.535 % 4.775 % 5.745 %
+Euro Reference Rate 4.245 % 4.245 % 4.245 % 4.245 % 4.245 %
+Spread (bps) 13 19 29 53 150
+Denomination 5,885.79 7,405.31 7,405.31 7,405.31 0.00
+Day Basis Act/360 Act/360 Act/360 Act/360 Act/360
+New Denomination for the next period 5,643.74 7,100.76 7,100.76 7,100.76 0.00
+2. Collateral Level Information
+Mortgage Asset Portfolio
+Amount Nr of Loans
+Beginning Principal Outstanding Balance 902,334,026.16 16,272
+Beginning Principal Outstanding Balance (net of Deemed Losses) 895,972,973.85
+Principal Redemption 35,342,621.32 537
+ Scheduled Principal Redemption 4,199,998.56
+ Prepayments 12,534,884.30
+ Retired Mortgages Assets for non-permitted variations 18,607,738.46
+CPR 5.58%
+Deemed Principal Losses 2,509,441.64
+Principal Recoveries (to the extent of a debit balance recorded on the PDL) 356,105.47
+Ending Principal Outstanding Balance 866,991,404.84 15,735
+Ending Principal Outstanding Balance (net of Deemed Losses) 858,477,016.36
+Ending Principal Outstanding Balance at Closing Date 1,495,358,931.35 24,378
+31-Oct-08 31-Jan-09
+WA Interest Rate 5.98358 % 5.21898 %
+3. Triggers and Tests Determinations
+Portfolio Trigger Event
+Mortgage Loans in arrears (90 - 365 days) 22,046,042.85
+Aggregate Principal Outstanding Balance of the Mortgage Loans on 21 June 2005 (CDD) 1,500,000,031.92
+Ratio 1.47%
+Net Cumulative Default Ratio
+Aggregate Principal Outstanding Balance of the Mortgage Assets as at the CDD 1,500,000,031.92
+Ratio 1.53%
+Pro-Rata Test PASS
+(b) Cash Reserve Account 13,500,000.00
+6. Principal Distribution IPD 16 Feb 2009
+Number of outstanding Class A Notes 141,375
+Class A Notes Principal Payment - per Note 242.05
+Class A Notes Principal Payment 34,219,818.75

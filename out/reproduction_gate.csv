@@ -1,0 +1,18 @@
+isin,ticker,n_replayed,G1,G2,G3,G4,G5,G6,gate_status,detail
+XS0222684655,MAGEL_3_A,12,INCOMPLETE,INCOMPLETE,PASS,INCOMPLETE,N/A,INCOMPLETE,INCOMPLETE,"inputs missing for G1,G2,G4,G6 (G1 testable on 3/12 IPDs: needs pool/sub-class balances from the full report)"
+XS0260784318,MAGEL_4_A,10,INCOMPLETE,INCOMPLETE,PASS,INCOMPLETE,N/A,INCOMPLETE,INCOMPLETE,"inputs missing for G1,G2,G4,G6 (G1 testable on 2/10 IPDs: needs pool/sub-class balances from the full report)"
+XS0230694233,LUSI_4_A,0,INCOMPLETE,INCOMPLETE,INCOMPLETE,INCOMPLETE,N/A,N/A,MANUAL_REQUIRED,Citi investor reports not public; drop PDFs in reports/<ISIN>_LUSI_x/
+XS0268642161,LUSI_5_A,0,INCOMPLETE,INCOMPLETE,INCOMPLETE,INCOMPLETE,N/A,N/A,MANUAL_REQUIRED,Citi investor reports not public; drop PDFs in reports/<ISIN>_LUSI_x/
+XS0312981649,LUSI_6_A,0,INCOMPLETE,INCOMPLETE,INCOMPLETE,INCOMPLETE,N/A,N/A,MANUAL_REQUIRED,Citi investor reports not public; drop PDFs in reports/<ISIN>_LUSI_x/
+ES0377992005,TDAC_5_A,8,INCOMPLETE,INCOMPLETE,PASS,INCOMPLETE,N/A,N/A,INCOMPLETE,"inputs missing for G1,G2,G4 (G1 testable on 0/8 IPDs: needs pool/sub-class balances from the full report)"
+ES0377993029,TDAC_6_A3,0,INCOMPLETE,INCOMPLETE,INCOMPLETE,INCOMPLETE,N/A,N/A,NO_HISTORY,"inputs missing for G1,G2,G3,G4 (G1 testable on 0/0 IPDs: needs pool/sub-class balances from the full report)"
+ES0377994019,TDAC_7_A2,0,INCOMPLETE,INCOMPLETE,INCOMPLETE,INCOMPLETE,N/A,N/A,NO_HISTORY,"inputs missing for G1,G2,G3,G4 (G1 testable on 0/0 IPDs: needs pool/sub-class balances from the full report)"
+ES0377994027,TDAC_7_A3,0,INCOMPLETE,INCOMPLETE,INCOMPLETE,INCOMPLETE,N/A,N/A,NO_HISTORY,"inputs missing for G1,G2,G3,G4 (G1 testable on 0/0 IPDs: needs pool/sub-class balances from the full report)"
+ES0377966009,TDAC_8_A,0,INCOMPLETE,INCOMPLETE,INCOMPLETE,INCOMPLETE,N/A,N/A,NO_HISTORY,"inputs missing for G1,G2,G3,G4 (G1 testable on 0/0 IPDs: needs pool/sub-class balances from the full report)"
+ES0377955010,TDAC_9_A2,0,INCOMPLETE,INCOMPLETE,INCOMPLETE,INCOMPLETE,N/A,N/A,NO_HISTORY,"inputs missing for G1,G2,G3,G4 (G1 testable on 0/0 IPDs: needs pool/sub-class balances from the full report)"
+ES0359091016,CAJAM_2006-1_A2,0,INCOMPLETE,INCOMPLETE,INCOMPLETE,INCOMPLETE,N/A,N/A,NO_HISTORY,"inputs missing for G1,G2,G3,G4 (G1 testable on 0/0 IPDs: needs pool/sub-class balances from the full report)"
+ES0380957003,UCI_15_A,2,INCOMPLETE,INCOMPLETE,INCOMPLETE,INCOMPLETE,N/A,N/A,INCOMPLETE,"inputs missing for G1,G2,G3,G4 (G1 testable on 0/2 IPDs: needs pool/sub-class balances from the full report)"
+ES0338186010,UCI_16_A2,0,INCOMPLETE,INCOMPLETE,INCOMPLETE,INCOMPLETE,N/A,N/A,NO_HISTORY,"inputs missing for G1,G2,G3,G4 (G1 testable on 0/0 IPDs: needs pool/sub-class balances from the full report)"
+ES0345672010,HIPO_11_A2,12,INCOMPLETE,INCOMPLETE,PASS,INCOMPLETE,INCOMPLETE,N/A,INCOMPLETE,"inputs missing for G1,G2,G4,G5 (G1 testable on 0/12 IPDs: needs pool/sub-class balances from the full report); G5 2019-01-15: shortfall reported (due 57491000, paid 2910000); available funds not filed; G5 2019-04-15: shortfall reported (due 61380000, paid 2414000); available funds not filed; G5 2019-07-15: shortfall reported (due 67072000, paid 6208000); available funds not filed; G5 2019-10-15: shortfall reported (due 67545000, paid 1954000); available funds not filed"
+ES0345721015,HIPO_9_A2a,0,INCOMPLETE,INCOMPLETE,INCOMPLETE,INCOMPLETE,N/A,N/A,NO_HISTORY,"inputs missing for G1,G2,G3,G4 (G1 testable on 0/0 IPDs: needs pool/sub-class balances from the full report)"
+ES0345721023,HIPO_9_A2b,0,INCOMPLETE,INCOMPLETE,INCOMPLETE,INCOMPLETE,N/A,N/A,NO_HISTORY,"inputs missing for G1,G2,G3,G4 (G1 testable on 0/0 IPDs: needs pool/sub-class balances from the full report)"

@@ -1,0 +1,53 @@
+# Deal terms (PIPELINE_SPEC s.4). null = not yet read from the prospectus -> CONFIG_INCOMPLETE.
+isin: ES0345672010
+index: EURIBOR_3M
+day_basis: ACT/360
+margin_steps: []
+coupon_floor: null
+swap: null
+fees: null
+reserve:
+  required: 28000000
+  observed:
+  - date: '2016-12-31'
+    note: Fondo de Reserva dotado 40.87 (EUR) vs requerido 28,000,000
+triggers:
+  arrears_3m_ratio_max: 0.01
+  pool_factor_min: 0.1
+  reserve_at_required: true
+  serie_C_min_pct: 0.08
+clean_up_call_pct: 0.1
+legal_final: '2050-01-15'
+first_ipd: null
+closing_date: '2007-03-15'
+pool_at_closing: 1600000049.35
+call_issuer_stated: null
+principal_shortfall_option: true
+publication_lag_days: 120
+family: edt
+unverified:
+- printed IPDs 2015-16 fall on the 21st-23rd, 2018-19 on the 15th (see calendar_checks)
+conflicts: []
+deal: HIPOCAT 11, FTA
+series: A2
+original_balance: 1083200000
+notes: 10832
+denomination: 100000
+margin_bp: 13
+ipd_rule:
+  months:
+  - 1
+  - 4
+  - 7
+  - 10
+  day: 15
+  convention: following
+  calendar: TARGET
+amortisation:
+  mode: pro_rata_if_conditions
+  note: A1/A2/A3 split by date-dependent rule; conditions in accounts trigger annex (reserve at required, arrears<1%, pool>10%, C>=8%)
+sources:
+- field: original/notes/margin/IPD/legal final/shortfall
+  url: HANDOFF.md s.4 (verified against filings in the original session)
+- field: reserve/triggers
+  url: https://edt-sg.com/intranet/fondos/FGH11/MFGH11C01161231.pdf
