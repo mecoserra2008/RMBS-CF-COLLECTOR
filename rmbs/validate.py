@@ -79,7 +79,7 @@ def expected_ipds(deal: dict, first: dt.date, last: dt.date) -> list[dt.date]:
     rules = ipd_rules(deal)
     if not rules:
         return []
-    first = cal.next_ipds(rules, first - dt.timedelta(days=1), 1)[0]      # business-day adjust the first IPD too
+    first = cal.next_ipds(rules, first - dt.timedelta(days=MATCH_DAYS + 1), 1)[0]   # nearest rule date (business-day adjusted)
     out = [first]
     cur = first
     while True:
